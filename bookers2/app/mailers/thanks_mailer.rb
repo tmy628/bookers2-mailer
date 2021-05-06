@@ -5,9 +5,9 @@ class ThanksMailer < ApplicationMailer
   #
   #   en.thanks_mailer.thanks_mail.subject
   #
-  def thanks_mail
-    @greeting = "Hi"
+  def thanks_mail(email, name)
+    @name = name
 
-    mail to: "to@example.org"
+    mail to: email, subject: 'Registration Complete! Thanks for Joining!'
   end
 end
