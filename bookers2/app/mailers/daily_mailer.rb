@@ -6,8 +6,6 @@ class DailyMailer < ApplicationMailer
   #   en.daily_mailer.daily_notification.subject
   #
   def daily_notification
-    default to: -> { User.plick(:email) }
-
-    mail(subject: "Daily Report of Your Record")
+    mail(:subject => "Daily Report of Your Record", bcc: User.pluck(:email))
   end
 end
